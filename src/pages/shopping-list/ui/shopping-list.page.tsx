@@ -1,3 +1,10 @@
+import { ShoppingListForm } from "@/widgets";
+
 export const ShoppingListPage = () => {
-  return <div>ShoppingListPage</div>;
+  return (
+    <div>
+      <h1>ShoppingListPage</h1>
+      <ShoppingListForm />
+    </div>
+  );
 };
