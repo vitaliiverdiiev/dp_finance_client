@@ -4,6 +4,7 @@ import { GET_SHOPPING_LIST_ITEMS } from "../model/schemas/shopping-list.gql";
 import { Link } from "react-router";
 import { TrashSimple } from "@phosphor-icons/react";
 import { Button } from "@/shared/ui";
+import { Checkbox } from "@/shared/ui/checkbox";
 
 export const ShoppingListPage = () => {
   const { loading, error, data } = useQuery(GET_SHOPPING_LIST_ITEMS);
@@ -25,9 +26,14 @@ export const ShoppingListPage = () => {
                   key={item.id}
                   className="flex items-center justify-between gap-4 w-full"
                 >
-                  <Link to={item.id}>
-                    <span>{item.name}</span> - <span>{item.amount}</span>
-                  </Link>
+                  <div className="flex items-center gap-3">
+                    <Checkbox />
+                    <Link to={item.id}>
+                      <span className="text-lg font-medium">{item.name}</span> -{" "}
+                      <span>{item.amount}</span>
+                    </Link>
+                  </div>
+
                   <Button
                     variant="ghost"
                     size="icon"

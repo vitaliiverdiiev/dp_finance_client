@@ -3,7 +3,10 @@ import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@apollo/client";
-import { CREATE_SHOPPING_LIST_ITEM } from "@/pages/shopping-list/model/schemas/shopping-list.gql";
+import {
+  CREATE_SHOPPING_LIST_ITEM,
+  GET_SHOPPING_LIST_ITEMS,
+} from "@/pages/shopping-list/model/schemas/shopping-list.gql";
 
 export const formSchema = z.object({
   name: z.string(),
@@ -30,11 +33,16 @@ export const useShoppingListForm = () => {
 
       const { data } = await createShoppingList({
         variables: { input: values },
+        refetchQueries: [{ query: GET_SHOPPING_LIST_ITEMS }],
+        onCompleted: () => {
+          toast.success("Item added to the shopping list");
+          form.reset();
+        },
+        onError: (err) => {
+          toast.error(err.message);
+        },
       });
-
-      console.log("Item Created:", data.createShoppingList);
     } catch (error) {
-      console.error("Error creating shopping list item:", error);
       toast.error("Failed to submit the form. Please try again.");
     }
   };
