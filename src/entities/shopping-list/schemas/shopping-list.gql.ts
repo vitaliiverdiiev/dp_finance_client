@@ -1,8 +1,8 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const GET_SHOPPING_LIST_ITEMS = gql`
-  query GetShoppingLists {
-    shoppingLists {
+  query GetShoppingList {
+    shoppingList {
       id
       name
       amount
@@ -14,7 +14,7 @@ export const GET_SHOPPING_LIST_ITEMS = gql`
 
 export const GET_SHOPPING_LIST_ITEM = gql`
   query GetShoppingListItem($id: String!) {
-    shoppingList(id: $id) {
+    shoppingListItem(id: $id) {
       id
       name
       amount
@@ -25,8 +25,8 @@ export const GET_SHOPPING_LIST_ITEM = gql`
 `;
 
 export const CREATE_SHOPPING_LIST_ITEM = gql`
-  mutation CreateShoppingList($input: CreateShoppingListInput!) {
-    createShoppingList(input: $input) {
+  mutation AddShoppingListItem($input: AddShoppingListItemInput!) {
+    addShoppingListItem(input: $input) {
       id
       name
       amount
@@ -37,8 +37,8 @@ export const CREATE_SHOPPING_LIST_ITEM = gql`
 `;
 
 export const DELETE_SHOPPING_LIST_ITEM = gql`
-  mutation DeleteShoppingList($id: String!) {
-    deleteShoppingList(id: $id) {
+  mutation DeleteShoppingListItem($id: String!) {
+    deleteShoppingListItem(id: $id) {
       id
       name
     }

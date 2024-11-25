@@ -1,13 +1,11 @@
-import { ShoppingListForm } from "@/widgets";
-import { useQuery } from "@apollo/client";
-import { GET_SHOPPING_LIST_ITEMS } from "../model/schemas/shopping-list.gql";
-import { Error, Loader, PageTitle } from "@/shared/ui";
-import { ShoppingList } from "@/widgets/shopping-list/ui/shopping-list";
+import { ShoppingListForm } from '@/widgets';
+import { useQuery } from '@apollo/client';
+import { GET_SHOPPING_LIST_ITEMS } from '../../../entities/shopping-list/schemas/shopping-list.gql';
+import { Error, Loader, PageTitle } from '@/shared/ui';
+import { ShoppingList } from '@/widgets/shopping-list/ui/shopping-list';
 
 export const ShoppingListPage = () => {
-  const { loading, error, data } = useQuery(GET_SHOPPING_LIST_ITEMS, {
-    
-  });
+  const { loading, error, data } = useQuery(GET_SHOPPING_LIST_ITEMS);
 
   if (loading) return <Loader />;
   if (error) return <Error message={error.message} />;
@@ -20,7 +18,7 @@ export const ShoppingListPage = () => {
         <PageTitle title="Shopping list" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <ShoppingList items={data.shoppingLists} />
+            <ShoppingList items={data.shoppingList} />
           </div>
           <div className="space-y-4">
             <ShoppingListForm />

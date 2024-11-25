@@ -1,1 +1,1 @@
-export { ShoppingListForm } from "./ui/shopping-list-form";
+export { ShoppingListForm } from './ui/shopping-list-form';

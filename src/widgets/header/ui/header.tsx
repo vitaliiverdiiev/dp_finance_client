@@ -1,7 +1,7 @@
-import { Link } from "react-router";
-import styles from "../styles/index.module.scss";
+import { Link } from 'react-router';
+import styles from '../styles/index.module.scss';
 
-import Logo from "$/dp-finance-logo-red.svg?react";
+import Logo from '$/dp-finance-logo-red.svg?react';
 
 export const Header = () => {
   return (

@@ -1,12 +1,12 @@
-import { useParams } from "react-router";
-import { useQuery } from "@apollo/client";
-import { GET_SHOPPING_LIST_ITEM } from "../model/schemas/shopping-list.gql";
+import { useParams } from 'react-router';
+import { useQuery } from '@apollo/client';
+import { GET_SHOPPING_LIST_ITEM } from '../../../entities/shopping-list/schemas/shopping-list.gql';
 
 export const ShoppingListItemPage = () => {
   const params = useParams();
 
   const { data, loading, error } = useQuery(GET_SHOPPING_LIST_ITEM, {
-    variables: { id: params.id },
+    variables: { id: params.id }
   });
 
   if (loading) return <p>Loading...</p>;

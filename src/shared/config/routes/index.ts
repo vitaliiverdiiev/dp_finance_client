@@ -1,1 +1,1 @@
-export { RoutesProvider } from "./routes.provider";
+export { RoutesProvider } from './routes.provider';

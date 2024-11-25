@@ -1,1 +1,1 @@
-export { ShoppingListPage } from "./ui/shopping-list.page";
+export { ShoppingListPage } from './ui/shopping-list.page';

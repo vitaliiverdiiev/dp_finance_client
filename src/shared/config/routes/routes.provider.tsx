@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Routes } from "react-router";
-import { ShoppingListPage } from "@/pages";
-import App from "@/App";
-import { ShoppingListItemPage } from "@/pages/shopping-list/ui/shopping-list-item.page";
-import { DashboardLayout } from "@/widgets/layouts/dashboard.layout";
+import { BrowserRouter, Route, Routes } from 'react-router';
+import { ShoppingListPage } from '@/pages';
+import App from '@/App';
+import { ShoppingListItemPage } from '@/pages/shopping-list/ui/shopping-list-item.page';
+import { DashboardLayout } from '@/widgets/layouts/dashboard.layout';
 
 export const RoutesProvider = () => {
   return (

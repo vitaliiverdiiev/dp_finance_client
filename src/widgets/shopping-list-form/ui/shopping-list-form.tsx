@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Button,
@@ -8,9 +8,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-  Input,
-} from "@/shared/ui";
-import { useShoppingListForm } from "../model/use-shopping-list-form";
+  Input
+} from '@/shared/ui';
+import { useShoppingListForm } from '../model/use-shopping-list-form';
 
 export const ShoppingListForm = () => {
   const { form, onSubmit, inputRef } = useShoppingListForm();

@@ -1,2 +1,2 @@
-export * from "./props-with-classname";
-export * from "./shopping-list";
+export * from './props-with-classname';
+export * from './shopping-list';
