@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
-import { GET_SHOPPING_LIST_ITEM } from "../model/schemas/shopping-list.gql";
 import { useQuery } from "@apollo/client";
+import { GET_SHOPPING_LIST_ITEM } from "../model/schemas/shopping-list.gql";
 
 export const ShoppingListItemPage = () => {
   const params = useParams();

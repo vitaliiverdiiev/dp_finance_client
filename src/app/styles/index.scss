@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .container {
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    // padding-top: 64px;
+    // padding-bottom: 64px;
+    
+    @media screen and (width < 768px) {
+      padding-left: 16px;
+      padding-right: 16px;
+      // padding-top: 32px;
+      // padding-bottom: 32px;
+    }
+  }
+  
+}
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -134,10 +154,4 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.container {
-  max-width: 1240px;
-  margin-inline: auto;
-  padding: 0 32px;
 }

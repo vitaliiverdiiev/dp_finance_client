@@ -13,7 +13,7 @@ import {
 import { useShoppingListForm } from "../model/use-shopping-list-form";
 
 export const ShoppingListForm = () => {
-  const { form, onSubmit } = useShoppingListForm();
+  const { form, onSubmit, inputRef } = useShoppingListForm();
 
   return (
     <Form {...form}>
@@ -28,7 +28,7 @@ export const ShoppingListForm = () => {
             render={({ field }) => (
               <FormItem className="">
                 <FormLabel>Name</FormLabel>
-                <FormControl>
+                <FormControl ref={inputRef}>
                   <Input
                     placeholder="What do you need to buy..?"
                     type="text"

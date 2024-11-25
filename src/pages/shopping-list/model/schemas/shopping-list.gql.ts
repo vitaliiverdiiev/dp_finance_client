@@ -35,3 +35,12 @@ export const CREATE_SHOPPING_LIST_ITEM = gql`
     }
   }
 `;
+
+export const DELETE_SHOPPING_LIST_ITEM = gql`
+  mutation DeleteShoppingList($id: String!) {
+    deleteShoppingList(id: $id) {
+      id
+      name
+    }
+  }
+`;

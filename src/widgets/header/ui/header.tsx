@@ -1,0 +1,27 @@
+import { Link } from "react-router";
+import styles from "../styles/index.module.scss";
+
+import Logo from "$/dp-finance-logo-red.svg?react";
+
+export const Header = () => {
+  return (
+    <div className={styles.header}>
+      <div className="container">
+        <Link to="/">
+          <Logo />
+        </Link>
+
+        <nav className={styles.nav}>
+          <ul>
+            <Link to="/">
+              <li>Home</li>
+            </Link>
+            <Link to="/shopping-list">
+              <li>Shopping List</li>
+            </Link>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  );
+};

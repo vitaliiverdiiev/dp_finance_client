@@ -1,0 +1,36 @@
+.header {
+  & [class*="container"] {
+    padding: 1rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // box-shadow: 0px -21px 11px 21px black;
+  border-bottom: 1px solid grey;
+
+  & .logo {
+    width: fit-content;
+    padding: 2px 12px;
+    padding-bottom: 4px;
+    border-radius: 8px;
+
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white;
+    background-color: red;
+  }
+}
+
+nav.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
