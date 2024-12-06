@@ -5,6 +5,7 @@ export * from './form';
 export * from './icon';
 export * from './input';
 export * from './label';
+export * from './link';
 export * from './loader';
 export * from './page-title';
 export * from './remove-button';

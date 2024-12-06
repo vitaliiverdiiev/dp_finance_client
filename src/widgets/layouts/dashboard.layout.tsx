@@ -3,11 +3,11 @@ import { Header } from '@/widgets/header';
 
 export const DashboardLayout = () => {
   return (
-    <div>
+    <>
       <Header />
       <main>
         <Outlet />
       </main>
-    </div>
+    </>
   );
 };

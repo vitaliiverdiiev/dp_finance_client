@@ -6,6 +6,16 @@ body {
   background-color: #eeeeee;
 }
 
+.maintenace {
+  height: 100%;
+
+  & [class*="container"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .box {
   display: flex;
   flex-direction: column;
@@ -13,13 +23,12 @@ body {
   align-items: center;
   width: auto;
   height: 500px;
+  width: 750px;
   background: #fff;
-  margin-top: 50px;
   margin-left: 100px;
   margin-right: 100px;
   border-radius: 5px;
-  box-shadow: 6px 18px 18px rgba(0, 0, 0, 0.08),
-    -6px 18px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #4DA187;
 }
 
 .animation {
@@ -29,24 +38,22 @@ body {
   margin-inline: auto;
 }
 
-h1 {
-  font-size: 32px;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin: 0;
-}
+.box {
+  text-align: center;
+  margin-top: 24px;
 
-p {
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0;
-}
-
-a {
-  color: #f6921e;
-  font-weight: bold;
-  text-decoration: none;
-  margin-left: 5px;
+  h1 {
+    font-size: 32px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  p {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+  }
 }
 
 .one,
