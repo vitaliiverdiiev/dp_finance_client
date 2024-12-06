@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import styles from '../styles/index.module.scss';
 
 import Logo from '$/dp-finance-logo-red.svg?react';
@@ -13,12 +13,22 @@ export const Header = () => {
 
         <nav className={styles.nav}>
           <ul>
-            <Link to="/">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? 'text-red-500' : 'text-black'
+              }
+            >
               <li>Home</li>
-            </Link>
-            <Link to="/shopping-list">
+            </NavLink>
+            <NavLink 
+              to="/shopping-list"
+              className={({ isActive }) =>
+                isActive ? 'text-red-500' : 'text-black'
+              }  
+            >
               <li>Shopping List</li>
-            </Link>
+            </NavLink>
           </ul>
         </nav>
       </div>

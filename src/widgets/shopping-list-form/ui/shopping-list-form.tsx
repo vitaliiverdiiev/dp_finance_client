@@ -11,6 +11,8 @@ import {
   Input
 } from '@/shared/ui';
 import { useShoppingListForm } from '../model/use-shopping-list-form';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui/select';
+import styles from '../styles/index.module.scss';
 
 export const ShoppingListForm = () => {
   const { form, onSubmit, inputRef } = useShoppingListForm();
@@ -21,12 +23,12 @@ export const ShoppingListForm = () => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-8 max-w-3xl mx-auto"
       >
-        <div className="grid gap-4 grid-cols-[8fr_4fr]">
+        <div className={styles.fields}>
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem className="">
+              <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl ref={inputRef}>
                   <Input
@@ -59,9 +61,33 @@ export const ShoppingListForm = () => {
               </FormItem>
             )}
           />
-        </div>
+         
+          <FormField
+            control={form.control}
+            name="unit"
+            render={({ field }) => (
+              <FormItem className="">
+                <FormLabel>Unit</FormLabel>
+                <FormControl>
+                  <Select onValueChange={field.onChange}>
+                    <SelectTrigger className="w-[60px]">
+                      <SelectValue placeholder="pc" {...field} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="pc">pc</SelectItem>
+                      <SelectItem value="kg">kg</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </FormControl>
 
-        <Button type="submit">Add</Button>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <Button type="submit">Add</Button>
+        </div>
+        
       </form>
     </Form>
   );

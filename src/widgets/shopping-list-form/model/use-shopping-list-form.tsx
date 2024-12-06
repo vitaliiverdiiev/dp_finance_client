@@ -12,10 +12,12 @@ import { ErrorResponse } from 'react-router';
 
 export const formSchema = z.object({
   name  : z.string(),
+  unit  : z.string(),
   amount: z.preprocess(
     (value) => (value !== '' ? Number(value) : undefined),
     z.number().min(0, 'Amount must be at least 0')
-  )
+  ),
+  isCompleted: z.boolean()
 });
 
 export const useShoppingListForm = () => {
@@ -25,14 +27,16 @@ export const useShoppingListForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver     : zodResolver(formSchema),
     defaultValues: {
-      amount: 0,
-      name  : ''
+      amount     : 1,
+      name       : '',
+      unit       : 'pc',
+      isCompleted: false
     }
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      console.log(values);
+      console.log('valuus', { values });
 
       await createShoppingList({
         variables     : { input: values },

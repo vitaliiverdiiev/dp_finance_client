@@ -2,6 +2,7 @@ export type ShoppingListType = {
   name: string;
   amount: number;
   id?: string;
-  isPicked?: boolean;
+  isCompleted?: boolean;
   isAbsent?: boolean;
+  unit?: 'kg' | 'pc';
 };

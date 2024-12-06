@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@forward "./compounds/scrollbar";
+
 @layer utilities {
   .container {
     max-width: 1240px;
@@ -11,7 +13,7 @@
 
     // padding-top: 64px;
     // padding-bottom: 64px;
-    
+
     @media screen and (width < 768px) {
       padding-left: 16px;
       padding-right: 16px;
@@ -19,7 +21,6 @@
       // padding-bottom: 32px;
     }
   }
-  
 }
 
 .card {

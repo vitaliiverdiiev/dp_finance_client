@@ -6,6 +6,7 @@ export const GET_SHOPPING_LIST_ITEMS = gql`
       id
       name
       amount
+      unit
       createdAt
       updatedAt
     }
@@ -32,6 +33,17 @@ export const CREATE_SHOPPING_LIST_ITEM = gql`
       amount
       createdAt
       updatedAt
+    }
+  }
+`;
+
+export const UPDATE_SHOPPING_LIST_ITEM = gql`
+  mutation UpdateShoppingListItem($id: String!, $input: UpdateShoppingListItemInput!) {
+    updateShoppingListItem(id: $id, input: $input) {
+      id
+      name
+      amount
+      isCompleted
     }
   }
 `;

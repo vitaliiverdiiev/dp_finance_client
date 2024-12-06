@@ -1,0 +1,36 @@
+/* Define the colors for the scrollbar thumb and track */
+html {
+  scrollbar-color: #585352 #818c96;
+  scrollbar-width: thin;
+}
+
+/* WebKit-specific scrollbar properties */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the entire scrollbar */
+  height: 12px; /* Height for horizontal scrollbar */
+}
+
+/* The draggable part of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #bdbdbd;
+  border-radius: 10px;
+  // border: 3px solid #818c96; /* Space around thumb */
+}
+
+/* The track (progress bar) of the scrollbar */
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 10px;
+}
+
+/* The buttons on the scrollbar (if any) */
+::-webkit-scrollbar-button {
+  background: #f5f5f5;
+  width: 10px;
+  height: 10px;
+}
+
+/* Bottom corner where the horizontal and vertical scrollbars meet */
+::-webkit-scrollbar-corner {
+  background: red;
+}

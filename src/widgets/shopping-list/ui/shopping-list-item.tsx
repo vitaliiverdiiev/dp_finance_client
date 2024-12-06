@@ -2,21 +2,29 @@ import React from 'react';
 import { ShoppingListType } from '@/shared/types';
 import { Checkbox, RemoveButton } from '@/shared/ui';
 import styles from '../styles/index.module.scss';
+import { cn } from '@/shared/utils';
 
 type Props = {
   item: ShoppingListType;
   removeItem: () => void;
+  markAsCompleted: () => void;
 };
 
-export const ShoppingListItem: React.FC<Props> = ({ item, removeItem }) => {
+export const ShoppingListItem: React.FC<Props> = ({ item, removeItem, markAsCompleted }) => {
   return (
     <li className={styles.item}>
       <div className={styles.checkboxContainer}>
-        <Checkbox />
+        <Checkbox onCheckedChange={markAsCompleted} />
       </div>
       <div className={styles.nameContainer}>
         <span>{item.name}</span>
-        <span>{item.amount}</span>
+        <div className={cn(
+          'flex gap-2 items-center',
+          item.isCompleted && 'line-through'
+        )}>
+          <span>{item.amount}</span>
+          <span>{item.unit}</span>
+        </div>
       </div>
       <div className={styles.actionsContainer}>
         <RemoveButton removeHandler={removeItem} />
